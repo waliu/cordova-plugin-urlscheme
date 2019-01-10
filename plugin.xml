@@ -24,7 +24,7 @@
         <config-file target="AndroidManifest.xml" parent="/manifest/application/activity[@android:name='MainActivity']">
             <intent-filter>
                 <!--协议部分，随便设置-->
-                <data android:scheme="xl" android:host="goods" android:path="/goodsDetail" />
+                <data android:scheme="xl" android:host="goods" android:path="/goodsDetail"/>
                 <!--下面这几行也必须得设置-->
                 <category android:name="android.intent.category.DEFAULT"/>
                 <action android:name="android.intent.action.VIEW"/>
