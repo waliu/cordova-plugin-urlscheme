@@ -1,2 +1,36 @@
 <?xml version='1.0' encoding='utf-8'?>
-<plugin id="cordova-plugin-urlscheme" version="0.0.1" xmlns="http://apache.org/cordova/ns/plugins/1.0" xmlns:android="http://schemas.android.com/apk/res/android"><name>urlscheme</name><js-module name="urlscheme" src="www/urlscheme.js"><clobbers target="cordova.plugins.urlscheme" /></js-module><platform name="ios"><config-file parent="/*" target="config.xml"><feature name="urlscheme"><param name="ios-package" value="urlscheme" /></feature></config-file><source-file src="src/ios/urlscheme.m" /></platform><platform name="android"><config-file parent="/*" target="res/xml/config.xml"><feature name="urlscheme"><param name="android-package" value="cordova-plugin-urlscheme.urlscheme" /></feature></config-file><config-file parent="/*" target="AndroidManifest.xml"></config-file><source-file src="src/android/urlscheme.java" target-dir="src/cordova-plugin-urlscheme/urlscheme" /></platform></plugin>
+<plugin id="cordova-plugin-urlscheme" version="0.0.1" xmlns="http://apache.org/cordova/ns/plugins/1.0"
+        xmlns:android="http://schemas.android.com/apk/res/android">
+    <name>urlscheme</name>
+    <js-module name="urlscheme" src="www/urlscheme.js">
+        <clobbers target="cordova.plugins.urlscheme"/>
+    </js-module>
+    <platform name="ios">
+        <config-file parent="/*" target="config.xml">
+            <feature name="urlscheme">
+                <param name="ios-package" value="urlscheme"/>
+            </feature>
+        </config-file>
+        <source-file src="src/ios/urlscheme.m"/>
+    </platform>
+    <platform name="android">
+        <config-file parent="/*" target="res/xml/config.xml">
+            <feature name="UrlScheme">
+                <param name="android-package" value="com.chenyu.urlscheme.UrlScheme"/>
+            </feature>
+        </config-file>
+        <config-file parent="/*" target="AndroidManifest.xml">
+        </config-file>
+        <config-file target="AndroidManifest.xml" parent="/manifest/application/activity[@android:name='MainActivity']">
+            <intent-filter>
+                <!--协议部分，随便设置-->
+                <data android:scheme="xl" android:host="goods" android:path="/goodsDetail" android:port="8888"/>
+                <!--下面这几行也必须得设置-->
+                <category android:name="android.intent.category.DEFAULT"/>
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+            </intent-filter>
+        </config-file>
+        <source-file src="src/android/UrlScheme.java" target-dir="src/com/chenyu/urlscheme"/>
+    </platform>
+</plugin>

@@ -1,5 +1,9 @@
 var exec = require('cordova/exec');
 
-exports.coolMethod = function (arg0, success, error) {
-    exec(success, error, 'urlscheme', 'coolMethod', [arg0]);
+var UrlScheme={
+    Init:(successFn,errorFn)=>{
+        console.log("你被调用了");
+      exec(successFn,errorFn,'UrlScheme','Init',[]);
+    }
 };
+module.exports = UrlScheme;
