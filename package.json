@@ -1,0 +1,14 @@
+{
+  "name": "cordova-plugin-urlscheme",
+  "version": "0.0.1",
+  "cordova": {
+    "id": "cordova-plugin-urlscheme",
+    "platforms": []
+  },
+  "keywords": [
+    "ecosystem:cordova"
+  ],
+  "author": "",
+  "license": "ISC",
+  "description": ""
+}
